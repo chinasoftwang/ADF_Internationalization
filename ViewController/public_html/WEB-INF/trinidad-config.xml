@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trinidad-config xmlns="http://myfaces.apache.org/trinidad/config">
+    <skin-family>skyros</skin-family>
+    <skin-version>v1</skin-version>
+    <time-zone>#{timeZoneSet.userTimeZone}</time-zone>
+    <formatting-locale>#{localSelect.userLocale}</formatting-locale>
+    <currency-code>#{customCurrency.currency.currencyCode}</currency-code>
+</trinidad-config>

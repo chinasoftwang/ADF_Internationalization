@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <managed-bean id="__3">
+    <managed-bean-name>timeZoneSet</managed-bean-name>
+    <managed-bean-class>demo.com.cn.view.session.TimeZoneSetBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__4">
+    <managed-bean-name>localSelect</managed-bean-name>
+    <managed-bean-class>demo.com.cn.view.session.LocalSelect</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name>customCurrency</managed-bean-name>
+    <managed-bean-class>demo.com.cn.view.session.CustomCurrency</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

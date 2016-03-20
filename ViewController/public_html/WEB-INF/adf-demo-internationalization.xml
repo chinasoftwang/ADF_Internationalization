@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="adf-demo-internationalization">
+    <default-activity>demoWelcome</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="demoWelcome">
+      <page>/fragments/demoWelcome.jsff</page>
+    </view>
+    <view id="demoTimeZone">
+      <page>/fragments/demoTimeZone.jsff</page>
+    </view>
+    <view id="demoCurency">
+      <page>/fragments/demoCurrency.jsff</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>demoWelcome</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>toTimeZone</from-outcome>
+        <to-activity-id>demoTimeZone</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>toCurrency</from-outcome>
+        <to-activity-id>demoCurency</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>demoTimeZone</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>demoWelcome</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>demoCurency</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>demoWelcome</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.8" id="DataBindings"
+             SeparateXMLFiles="false" Package="demo.com.cn.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/mainPage.jspx" usageId="demo_com_cn_view_mainPagePageDef"/>
+    <page path="/demoMain.jsf" usageId="demo_com_cn_view_demoMainPageDef"/>
+    <page path="/fragments/demoTimeZone.jsff" usageId="demo_com_cn_view_demoTimeZonePageDef"/>
+    <page path="/fragments/demoCurrency.jsff" usageId="demo_com_cn_view_demoCurrencyPageDef"/>
+    <page path="/test.jsf" usageId="demo_com_cn_view_testPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="demo_com_cn_view_mainPagePageDef" path="demo.com.cn.view.pageDefs.mainPagePageDef"/>
+    <page id="demo_com_cn_view_demoMainPageDef" path="demo.com.cn.view.pageDefs.demoMainPageDef"/>
+    <page id="demo_com_cn_view_demoTimeZonePageDef" path="fragments.demoTimeZonePageDef"/>
+    <page id="demo_com_cn_view_demoCurrencyPageDef" path="fragments.demoCurrencyPageDef"/>
+    <page id="demo_com_cn_view_testPageDef" path="demo.com.cn.view.pageDefs.testPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HRAppModuleDataControl" Package="demo.com.cn.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HRAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

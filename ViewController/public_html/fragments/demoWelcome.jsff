@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle" value="#{adfBundle['demo.com.cn.view.ViewControllerBundle']}"/>
+  <af:panelStretchLayout id="psl1" dimensionsFrom="parent">
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:panelGroupLayout id="pgl5" valign="middle" halign="center" layout="vertical">
+        <af:panelGroupLayout id="pgl2" halign="center" layout="horizontal">
+          <af:panelFormLayout id="pfl1">
+            <af:inputText label="#{viewcontrollerBundle.demo_username}" id="it2"/>
+            <af:inputText label="#{viewcontrollerBundle.demo_password}" id="it1"/>
+            <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center">
+              <af:button text="#{viewcontrollerBundle.demo_timezone}" id="b1" action="toTimeZone"/>
+              <af:spacer width="10" height="10" id="s1"/>
+              <af:button id="b2" text="#{viewcontrollerBundle.demo_currency}" action="toCurrency"/>
+            </af:panelGroupLayout>
+          </af:panelFormLayout>
+        </af:panelGroupLayout>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="start">
+      <af:outputText value="tttt                 #{facesContext.viewRoot.locale}" id="ot1" rendered="false"/>
+    </f:facet>
+    <f:facet name="end"/>
+    <f:facet name="top">
+      <af:panelGroupLayout id="pgl1" layout="horizontal" halign="right">
+        <af:activeOutputText value="#{facesContext.viewRoot.locale}" id="aot1" rendered="false"/>
+        <af:panelGroupLayout id="pgl4" layout="scroll">
+          <af:menuBar id="mb1">
+            <af:menu text="#{viewcontrollerBundle.demo_Language}" id="m1">
+              <af:commandMenuItem text="中文" id="zh_CN" type="radio" selected="#{localSelect.strLocale == 'zh'}"
+                                  actionListener="#{localSelect.changeLocale}">
+                <af:setPropertyListener from="zh" type="action" to="#{localSelect.strLocale}"/>
+              </af:commandMenuItem>
+              <af:commandMenuItem text="English" id="en_US" type="radio" selected="#{localSelect.strLocale == 'en'}"
+                                  actionListener="#{localSelect.changeLocale}">
+                <af:setPropertyListener from="en" to="#{localSelect.strLocale}" type="action"/>
+              </af:commandMenuItem>
+            </af:menu>
+          </af:menuBar>
+        </af:panelGroupLayout>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>
